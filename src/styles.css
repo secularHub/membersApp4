@@ -1,1 +1,322 @@
 /* You can add global styles to this file, and also import other style files */
+/* html tags */
+html{
+  text-size-adjust: 100%;
+}
+
+h1{ /* colors of the heading text */
+  margin: 0;
+  background: #1d2528;
+  color: #FFCC99;
+}
+
+h2{
+  background: #1d2528;
+  color: #FFCC99;
+}
+
+h3{
+  background: #1d2528;
+  color: #FFCC99;
+}
+
+body{
+  background: #1d2528;
+  color: lightblue;
+}
+
+.badge {
+  background-color: #99FFFF;
+  color: #FF1F1F;
+  position: relative;
+  font-size: 14;
+  font-weight: 250;
+  border-radius: 4px;
+}
+
+.badge:hover {
+  background-color: #5cFFFF;
+  cursor: pointer;
+}
+
+/* .rightmarg seems to be unused */
+.rightmarg {
+  color: red;
+}
+
+.top-logo img { 
+  height: 0.5in; 
+  width:  0.5in;
+  float: left;
+ }
+.top-logo h3 { 
+  position: relative;
+  float: left;
+}
+
+.panel {
+  background-color: #1d2528;
+  color: lightblue;
+}
+
+.login-label {
+  width: 80px;
+}
+
+.input-custom{
+  border-style: inset;
+  border-color: #5CFFFF;        /* Border color of the members component input fields */
+  height: 25px;                      /* This controls the height of all the input fields */
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 15px 40px;
+}
+
+.form-group{
+  background-color: #1d2528;
+  color: lightblue;
+}
+.form-inline{
+  background-color: #1d2528;
+  color: lightblue;
+}
+.form-control {
+  background-color: #1d2528;
+  color: lightblue;
+}
+.form-control-dt{
+  background-color: #1d2528;
+  color: lightblue;
+  width: 150px;
+  border-bottom-color: #5CFFFF;
+  border-left-color: #5CFFFF;
+  border-right-color: #5CFFFF;
+  border-top-color: #5CFFFF;
+  border-style: solid;
+  border-width: 1px;
+  height: 25px;                      
+  border-radius: 15px 40px;
+}
+.form-control-amt{
+  background-color: #1d2528;
+  color: lightblue;
+  width: 70px;
+  border-bottom-color: #5CFFFF;
+  border-left-color: #5CFFFF;
+  border-right-color: #5CFFFF;
+  border-top-color: #5CFFFF;
+  border-style: solid;
+  border-width: 1px;
+  height: 25px;                      
+  border-radius: 15px 40px;
+}
+.form-control-pt{
+  background-color: #1d2528;
+  color: lightblue;
+  width: 120px;
+  border-bottom-color: #5CFFFF;
+  border-left-color: #5CFFFF;
+  border-right-color: #5CFFFF;
+  border-top-color: #5CFFFF;
+  border-style: solid;
+  border-width: 1px;
+  height: 25px;                      
+  border-radius: 15px 40px;
+}
+
+/* NOTE:
+See http://www.w3schools.com/cssref/css_selectors.asp
+The selector:    .form-control input
+would match an input element inside of an element marked with class form-control.
+These selectors below are probably not matching because the HTML is like:
+    <input ... class="form-control">
+The input element IS of class form-control.
+To match an input element that IS of class form-control use a selector like:
+    input.form-control
+*/
+
+/*
+.form-control option{
+  background-color: #1d2528;
+  color: lightblue;
+  max-height: 2em;
+}
+.form-control input{
+  background-color: #1d2528;
+  color: lightblue;
+  max-height: 2em;
+  max-width: 4em;
+}
+
+input.form-control {
+  /* margin: 3px 0px 3px 0px; 
+}
+*/
+
+/* Button Styles */
+
+.btn-red {
+  background: #db0c1c;
+  background-image: -webkit-linear-gradient(top, #db0c1c, #041d2d);
+  background-image: -moz-linear-gradient(top, #db0c1c, #041d2d);
+  background-image: -ms-linear-gradient(top, #db0c1c, #041d29);
+  background-image: -o-linear-gradient(top, #db0c1c, #041d2d);
+  background-image: linear-gradient(to bottom, #db0c1c, #041d2d);
+  -webkit-border-radius: 18;
+  -moz-border-radius: 18;
+  border-radius: 18px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: Arial;
+  color: #FFFF99;
+  font-size: 14px;
+  padding: 5px 10px 5px 10px;
+  text-decoration: none;
+}
+
+.btn-red:hover {
+  background: #ef5252;
+  background-image: -webkit-linear-gradient(top, #ef5252, #382a2a);
+  background-image: -moz-linear-gradient(top, #ef5252, #382a2a);
+  background-image: -ms-linear-gradient(top, #ef5252, #382a2a);
+  background-image: -o-linear-gradient(top, #ef5252, #382a2a);
+  background-image: linear-gradient(to bottom, #ef5252, #382a2a);
+  text-decoration: none;
+}
+
+.btn-custom {
+  background: #99CCFF;
+  background-image: -webkit-linear-gradient(top, #99CCFF, #041d2d);
+  background-image: -moz-linear-gradient(top, #99CCFF, #041d2d);
+  background-image: -ms-linear-gradient(top, #99CCFF, #FF5C5C);
+  background-image: -o-linear-gradient(top, #99CCFF, #041d2d);
+  background-image: linear-gradient(to bottom, #99CCFF, #041d2d);
+  -webkit-border-radius: 18;
+  -moz-border-radius: 18;
+  border-radius: 18px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: Arial;
+  color: #FFFF99;
+  font-size: 14px;
+  padding: 3px 10px 3px 10px;
+  text-decoration: none;
+  /* margin: 5px 0px 5px 0px; */
+}
+
+.btn-custom:hover {
+  background: #5CFFFF;
+  background-image: -webkit-linear-gradient(top, #5CFFFF, #363a5a);
+  background-image: -moz-linear-gradient(top, #5CFFFF, #363a5a);
+  background-image: -ms-linear-gradient(top, #5CFFFF, #FFCC99);
+  background-image: -o-linear-gradient(top, #5CFFFF, #363a5a);
+  background-image: linear-gradient(to bottom, #5CFFFF, #363a5a);
+  text-decoration: none;
+}
+
+#scrolltableskinny { color:#FFFF99; margin-top: 20px; height: 240px; overflow: auto; }
+#scrolltableskinny th div { color:#FFFF99; position: absolute; margin-top: -20px; }
+
+.itemtable {
+  background-color: #1f2f2f;
+  margin: 0 0 1em 0;
+  color: #a8af87;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: normal;
+  font-size: x-small;
+  padding-left: 4px;
+  max-height: 200px;
+  overflow: auto;
+}
+.itemtable tr {
+  color: #c0c9c7;
+}
+.itemtable tr th{
+  min-width: 3em;
+  padding: .5em 8px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.itemtable tr td{
+  padding: .2em 8px;
+  max-height: 2em;
+  color: lightblue;
+}
+.input-short{
+  background-color: #1f2f2f;
+  border-color: #102020;
+  color: #ffc12b;
+  max-height: 2em;
+  width: 4em;
+  border-radius: 6px;
+  padding: .2em;
+}
+.itemtable tr.selected:hover {
+  background-color: #1f2f2f !important;
+  color: #FFFF99;
+  cursor: pointer;
+}
+.itemtable tr:hover {
+  color: #FFFF99;
+  background-color: #396763;
+  left: .1em;
+}
+.itemtable tr td:hover {
+  color: #FFFF99;
+  background-color: #396763;
+  left: .1em;
+}
+
+/* this is for the data area that is scrollable */
+.table-container {
+  overflow-y: auto;
+  height: 221px;
+  background: #1d2528;
+  color: lightblue;
+  border-spacing: 0;
+  width:100%;
+  display: block;
+}
+.table-container tr:nth-child(even){
+  background-color: #28130f;
+}
+
+/* reposition the divs in the header cells and place in the blank area of the headercontainer */
+.table-container thead {
+  background: #000;
+  color: #c9182d;
+  padding: 2px 2px;
+  /*top: 0;*/
+  display: table;
+  /*margin-left: 1px;*/
+  line-height: normal;
+  width: calc(100% - 16px); /* assuming scrollbar width as 16px */
+}
+.table-container tr {
+  /*display: table;*/
+}
+.table-container td {
+  padding: 2px 6px;
+}
+.table-container th {
+  padding: 2px 6px;
+}
+.table-container tbody {
+  overflow-y: auto;
+  height: 221px;
+  padding: 2px 6px;
+  display: table;
+  width: calc(100% - 16px); /* assuming scrollbar width as 16px */
+}
+
+.table-container tr.selected:hover {
+  background-color: #1f2f2f !important;
+  color: #E9DC51;
+  cursor: pointer;
+}
+
+.table-container tr:hover {
+  background-color: #3f5a66 !important;
+  color: #e5ef27;
+}

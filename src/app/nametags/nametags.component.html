@@ -1,0 +1,108 @@
+
+
+  <!-- Main page -->
+<div *ngIf="!isPreview" class="panel">
+
+  <div class="panel-body">
+    <button type="button" class="btn-custom nametags-cornered nametags-left" (click)="isPreview=true" >Preview</button>
+    <div class="row">
+      <div class="col-md-8">
+        <h1>Name Tags</h1>
+        <div>
+          <table class="table-container">
+            <tbody>
+              <tr>
+                <th>first name</th>
+                <th>last name</th>
+                <th>phone</th>
+                <th>email</th>
+                <th>active</th>
+              </tr>
+              <tr *ngFor="let al of memberlist;" [class.itemselected]="item === selectedItem" (click)="onClickTable(al)" >
+                <td> {{al.firstName}} </td>
+                <td> {{al.lastName}} </td>
+                <td> {{al.phone}} </td>
+                <td> {{al.email}} </td>
+                <td> {{ toYN(al.isActive) }} </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+<!-- Preview page -->
+<div *ngIf="isPreview" class="nametags-previewpage">
+
+  <div class="nametags-controlpanel hidden-print nametags-cornered">
+    <button type="button" class="btn-custom nametags-cornered nametags-left" (click)="isPreview=false" >Exit Preview</button>
+    
+    <p class="nametags-bold nametags-pushdown">Adjust Margins</p>
+    <p class="nametags-sliderlabel">(-2.0 to 2.0)</p>
+    <p class="nametags-sliderlabel">(tenths of an inch)</p>
+    <p>&nbsp;</p>
+    <p class="nametags-sliderlabel">Top Margin</p>
+    <p class="nametags-sliderlabel">
+      <button type="button" class="glyphicon glyphicon-triangle-top" (click)="incTop(-0.1)" ></button>
+      <input id="Top_Slider" class="nametags-slidervalue" [(ngModel)]="topSlider" (change)="topSliderChange($event)"/>
+      <button type="button" class="glyphicon glyphicon-triangle-bottom" (click)="incTop(0.1)" ></button>
+    </p>
+      
+    <p>&nbsp;</p>
+    <p class="nametags-sliderlabel">Left Margin</p>
+    <p class="nametags-sliderlabel">
+      <button type="button" class="glyphicon glyphicon-triangle-left" (click)="incLeft(-0.1)" ></button>
+      <input id="Left_Slider" class="nametags-slidervalue" [(ngModel)]="leftSlider" (change)="leftSliderChange($event)"/>
+      <button type="button" class="glyphicon glyphicon-triangle-right" (click)="incLeft(0.1)" ></button>
+    </p>
+
+    <p>&nbsp;</p>
+    <p class="nametags-sliderlabel">Nudge Up &amp; Down</p>
+    <p class="nametags-sliderlabel">
+      <button type="button" class="glyphicon glyphicon-triangle-top" (click)="incNudge(-0.1)" ></button>
+      <input id="Nudge_Slider" class="nametags-slidervalue" [(ngModel)]="nudgeSlider" (change)="nudgeSliderChange($event)"/>
+      <button type="button" class="glyphicon glyphicon-triangle-bottom" (click)="incNudge(0.1)" ></button>
+    </p>
+    <!--
+    <ng2-slider min="-2" max="+2" value="0"
+      (onRangeChanged)="topValueChanged($event, 'Top_Slider')"></ng2-slider>
+    <ng2-slider min="-2" max="+2" value="0"
+      (onRangeChanged)="leftValueChanged($event, 'Left_Slider')"></ng2-slider>
+    <ng2-slider min="-1" max="+1" value="0" stepValue="0.1"
+      (onRangeChanged)="nudgeValueChanged($event, 'Nudge_Slider')"></ng2-slider>
+    -->
+  </div>
+
+  <div class="nametags-page">
+
+  <!-- NOTE: <input  data-id="{{col.rowIndex}}-{{col.columnIndex}}" [value]="col.cellValue" (input)="col.cellValue = $event.target.value" (click)="model.selectColumn(col)" (keyup)="navigate($event)" /> -->
+    <div class="nametags-table">
+
+      <div *ngFor="let theRow of rows; let row = index" class="nametags-row">
+        <div *ngFor="let item of theRow.cols; let col=index" class="nametags-cell">
+            <div class="tag{{row*2+col+1}} nametags-tag" *ngIf="!isNameTagBlank(item)">
+              <div class="nametags-tagcontent">
+                <div class="nametags-firstname">
+                  {{item.firstName}}
+                </div>
+                <div class="nametags-lastname">
+                  {{item.lastName}}
+                </div>
+                <div class="nametags-logo-container">
+                  <img class="nametags-logo" [src]="logoUrl"/>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div> <!-- nametags-page -->
+
+</div> <!-- nametags-previewpage -->
