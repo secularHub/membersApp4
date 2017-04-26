@@ -1,4 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import {BrowserDomAdapter } from '@angular/platform-browser/src/browser/browser_adapter';
+//import * as $ from "jquery";
 
 @Component({
   selector: 'as-navbar',
@@ -7,7 +9,6 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NavbarComponent implements OnInit {
-
   ngOnInit() {
     this.setupClickForHover();
   }
