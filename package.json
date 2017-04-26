@@ -26,8 +26,12 @@
     "bootstrap": "^3.3.7",
     "core-js": "^2.4.1",
     "jquery": "^3.1.1",
-    "rxjs": "^5.1.0",
     "tether": "^1.4.0",
+    "rxjs": "^5.1.0",
+<<<<<<< HEAD
+    "tether": "^1.4.0",
+=======
+>>>>>>> 81df2f85364032bacfbcac89e191dea8e8df89e5
     "zone.js": "^0.8.4"
   },
   "devDependencies": {
