@@ -3,7 +3,7 @@ import { Member } from '../members/member';
 import { Router } from '@angular/router';
 import { AppComponent } from '../app.component';
 import { MemberNJSService } from "../members/memberNJS.service";
-
+import * as $ from "jquery";
 @Component({
   selector: 'app-nametags',
   templateUrl: './nametags.component.html',
@@ -23,8 +23,8 @@ export class NametagsComponent implements OnInit {
   logoUrl: string = "/assets/images/cropped-faceboook-logo-whole-hub-e1454810467184.png";
 
   constructor(
-    private router: Router, 
-    private memservice: MemberNJSService, 
+    private router: Router,
+    private memservice: MemberNJSService,
     private app: AppComponent) {
       // empty
   }
@@ -63,7 +63,7 @@ export class NametagsComponent implements OnInit {
         }
         , 100);
     }
-  }  
+  }
 
 
   changedTop(value: number) {
@@ -108,7 +108,7 @@ export class NametagsComponent implements OnInit {
     if (isNaN(original)) {
       original = defaultValue;
     }
-    
+
     /* NaN */
     if (isNaN(value)) {
       result = newValue;

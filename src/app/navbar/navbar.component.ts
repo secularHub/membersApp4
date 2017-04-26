@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-
+import * as $ from "jquery";
 @Component({
   selector: 'as-navbar',
   templateUrl: './navbar.component.html',
