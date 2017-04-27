@@ -16,6 +16,7 @@ export class ReportsComponent implements OnInit {
 
   constructor(private ms: MemberNJSService) {
       this.isShowHeader = true;
+      this.reportName = "generic";
   }
   //ops: {name: string; display: string;}
 
@@ -37,8 +38,10 @@ export class ReportsComponent implements OnInit {
   isShowSave: boolean;
   isShowPrint: boolean;
   isShowGenerate: boolean;
+  reportName: string;
   ops: {name: string; display: string;}
   optionStates: Array<string>;
+
 
   private compareMember(left, right){
     let ln: string;

@@ -43,7 +43,7 @@ export class MaintenanceComponent implements OnInit {
     this.router = r;
     this.ms = lms;
   }
-  
+
   getLastPayment(ps: Array<IPayment>) : IPayment
   {
     let last : IPayment;
@@ -62,7 +62,7 @@ export class MaintenanceComponent implements OnInit {
 
   }
 //  private m: Member;
-  private reconcile() {
+  public reconcile() {
     this.notifyMessage = "This will take a while! Done once you can navigate again.";
     let tnow = new Date();
     let thist = this.ms.addMonths(tnow, -12);
@@ -181,7 +181,7 @@ export class MaintenanceComponent implements OnInit {
     let jwt = localStorage.getItem('id_token');
     if(jwt.length == 0)
       this.router.navigate(['']);
-      
+
     this.temp = '';
 
     this.isShowDeleteMember = true;
