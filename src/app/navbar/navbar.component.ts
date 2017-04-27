@@ -8,7 +8,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
   ngOnInit() {
-    this.setupClickForHover();
+//    this.setupClickForHover();
   }
 
   private setupClickForHover() {
