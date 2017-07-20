@@ -7,6 +7,7 @@ import {Router}   from '@angular/router';
 import {MemberNJSService} from "./memberNJS.service";
 import {rules} from "./config";
 import {MaintenanceComponent} from "../maintenance/maintenance.component";
+import {AuthService} from "../common/auth.service";
 
 //import {EmsComponent} from "./ems.component";
 
@@ -16,7 +17,7 @@ import {MaintenanceComponent} from "../maintenance/maintenance.component";
 @Component({
 
   selector: 'as-member',
-  providers: [MemberNJSService,PaymentComponent],
+  providers: [MemberNJSService,PaymentComponent, AuthService],
   templateUrl: './members.component.html',
   styleUrls: ['./members.component.css']
 })
@@ -65,7 +66,7 @@ export class MembersComponent implements OnInit {
   logoUrl: string = "/assets/images/cropped-faceboook-logo-whole-hub-e1454810467184.png";
 
   //  memberlist: FirebaseListObservable<any[]>;
-  constructor(private r: Router, private ms: MemberNJSService) {
+  constructor(private r: Router, private ms: MemberNJSService, private af: AuthService) {
     this.router = r;
     this.btnstyle = "btn-custom";
     this.memservice = ms;
@@ -86,7 +87,11 @@ export class MembersComponent implements OnInit {
 
     //    this.memberlist = af.database.list('./members');
   }
-
+  logout() {
+    this.af.signOut();
+    console.log('logged out');
+    this.router.navigateByUrl('/login');
+  }
   getPayments(): Array<IPayment> {
     if (this.payments == null)
       this.payments = new Array<IPayment>();

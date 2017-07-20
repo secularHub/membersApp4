@@ -13,6 +13,7 @@ h1{ /* colors of the heading text */
 h2{
   background: #1d2528;
   color: #FFCC99;
+  margin: 1.7em 0 .9em 0;
 }
 
 h3{
@@ -23,8 +24,110 @@ h3{
 body{
   background: #1d2528;
   color: lightblue;
+  padding-top:4em;
 }
 
+.form-container {
+  background:white;
+  padding:3.5em;
+  width:500px;
+  position:fixed;
+  left:50%;
+  margin-left:-250px;
+}
+
+button {
+  padding:1.2em;
+  width:100%;
+  cursor:pointer;
+  margin-bottom:15px;
+  font-size:1.3em;
+}
+
+.basic-btn {
+  background: #3B8598;
+  color:white;
+}
+
+input.txt {
+  background:#fff !important;
+  padding:1.3em 1em;
+  font-size:1.3em;
+  border: 1px solid #BBBBBB;
+}
+
+
+.alc {
+  text-align:center;
+  display:block;
+  margin: 15px 0;
+}
+
+.error {
+  background:#f1f0ef;
+  padding:1em;
+  width:100%;
+  display:block;
+  margin-bottom:20px;
+}
+
+#goback {
+  font-weight:bold;
+  text-transform:uppercase;
+  font-size:.8em;
+  color:#3B8598;
+}
+#goback span {
+  font-size:1em;
+}
+
+
+
+.loading {
+  width: 30px;
+  height: 30px;
+  border: 5px solid #ccc;
+  position: fixed;
+  left: 50%;
+  margin-left: -20px;
+  top: 50%;
+  margin-top: -20px;
+  border-radius: 50%;
+}
+
+
+.loading:after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 10px;
+  background: #E2E4E6;
+  top: 10px;
+  left: -5px;
+  animation: spin 1.2s infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+@media (max-width: 600px) {
+  body {
+    padding-top:1.2em;
+  }
+
+  .form-container {
+    padding:1.2em;
+    width:90%;
+    margin-left:-45%;
+  }
+  button {
+    font-size:1em;
+  }
+}
 .badge {
   background-color: #99FFFF;
   color: #FF1F1F;
@@ -44,12 +147,12 @@ body{
   color: red;
 }
 
-.top-logo img { 
-  height: 0.5in; 
+.top-logo img {
+  height: 0.5in;
   width:  0.5in;
   float: left;
  }
-.top-logo h3 { 
+.top-logo h3 {
   position: relative;
   float: left;
 }
@@ -94,7 +197,7 @@ body{
   border-top-color: #5CFFFF;
   border-style: solid;
   border-width: 1px;
-  height: 25px;                      
+  height: 25px;
   border-radius: 15px 40px;
 }
 .form-control-amt{
@@ -107,7 +210,7 @@ body{
   border-top-color: #5CFFFF;
   border-style: solid;
   border-width: 1px;
-  height: 25px;                      
+  height: 25px;
   border-radius: 15px 40px;
 }
 .form-control-pt{
@@ -120,7 +223,7 @@ body{
   border-top-color: #5CFFFF;
   border-style: solid;
   border-width: 1px;
-  height: 25px;                      
+  height: 25px;
   border-radius: 15px 40px;
 }
 
@@ -149,7 +252,7 @@ To match an input element that IS of class form-control use a selector like:
 }
 
 input.form-control {
-  /* margin: 3px 0px 3px 0px; 
+  /* margin: 3px 0px 3px 0px;
 }
 */
 

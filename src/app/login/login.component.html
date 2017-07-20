@@ -1,6 +1,6 @@
-<form (submit)="login($event, username.value, password.value)" #memberForm="ngForm" class="panel">
+<!--<form (submit)="login($event, username.value, password.value)" #memberForm="ngForm" class="panel">
 <div class="panel">
-  <!--<span [hidden]="member.email.valid" class="badge badge-warning">Required</span>-->
+  &lt;!&ndash;<span [hidden]="member.email.valid" class="badge badge-warning">Required</span>&ndash;&gt;
   <div class="panel-body">
     <div>
       <h1>Welcome {{someData}}</h1>
@@ -17,6 +17,18 @@
       <button  type="submit" class="btn-custom">Login</button>
     </div>
   </div>
-  <!--<label><input type="checkbox" [(ngModel)]="showCompleted" name="memberCompleted"> show completed</label>-->
+  &lt;!&ndash;<label><input type="checkbox" [(ngModel)]="showCompleted" name="memberCompleted"> show completed</label>&ndash;&gt;
 </div>
-</form>
+</form>-->
+
+<div class="form-container">
+  <img src="assets/images/lock.svg" id="lock">
+
+  <span class="error" *ngIf="error">{{ error }}</span>
+
+  <button (click)="loginFb()" id="fb">Login With Facebook</button><br>
+  <button (click)="loginGoogle()" id="google">Login With Google</button>
+  <button routerLink="/login-email" id="email">Email</button>
+
+  <a routerLink="/signup" routerLinkActive="active" class="alc">No account? <strong>Create one here</strong></a>
+</div>
