@@ -14,7 +14,7 @@ export class AuthGuard implements CanActivate {
   constructor(private auth: AuthService, private router: Router) {}
 
   canActivate(): Observable<boolean> {
-    return this.auth.afAuth.authState
+    return this.auth.aa.authState
       .take(1)
       .map(authState => !!authState)
       .do(authenticated => {

@@ -7,8 +7,7 @@ import { NametagsComponent } from './nametags/nametags.component';
 import { ReportsComponent } from './reports/reports.component';
 import { LocationStrategy } from "@angular/common";
 import { AppComponent } from "./app.component";
-import { AuthGuard } from './common/auth.service';
-import {EmailComponent} from "./email/email.component";
+import { AuthGuard } from './common/auth.guard';
 import {SignupComponent} from "./signup/signup.component";
 
 // TODO: create some auth routes
@@ -16,7 +15,6 @@ export const AppRoutes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
-  { path: 'login-email', component: EmailComponent },
   { path: 'members', component: MembersComponent },
   { path: 'maintenance', component: MaintenanceComponent },
   { path: 'nametags', component: NametagsComponent },

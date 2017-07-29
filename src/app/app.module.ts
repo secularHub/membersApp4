@@ -16,7 +16,6 @@ import { ReportsComponent } from './reports/reports.component';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { SignupComponent } from './signup/signup.component';
-import { EmailComponent } from './email/email.component';
 import * as firebase from 'firebase/app';
 export { firebase };
 //import {AuthHttp} from "angular2-jwt";
@@ -40,8 +39,8 @@ export const firebaseConfig = {
     LoginComponent,
     NametagsComponent,
     ReportsComponent,
-    SignupComponent,
-    EmailComponent
+    SignupComponent
+
 
   ],
   imports: [

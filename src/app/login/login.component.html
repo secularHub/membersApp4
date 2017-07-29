@@ -26,9 +26,16 @@
 
   <span class="error" *ngIf="error">{{ error }}</span>
 
-  <button (click)="loginFb()" id="fb">Login With Facebook</button><br>
-  <button (click)="loginGoogle()" id="google">Login With Google</button>
-  <button routerLink="/login-email" id="email">Email</button>
+  <Form ngModel="model" (ngSubmit)="loginEmail()">
+    <label *ngFor="username">user name</label>
+    <input type="text" [(ngMode)]="email" id="username">
+    <label *ngFor="password">password</label>
+    <input type="password" [(ngModel)]="password" id="password">
+    <button type="submit">Email Login</button>
+  </Form>
+  <!--<button (click)="loginFb()" id="fb">Login With Facebook</button><br>
+  <button (click)="loginGoogle()" id="google">Login With Google</button>-->
+
 
   <a routerLink="/signup" routerLinkActive="active" class="alc">No account? <strong>Create one here</strong></a>
 </div>
