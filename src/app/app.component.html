@@ -1,7 +1,8 @@
-<div *ngIf="login">
-  <app-login (OnLoginSuccess)="onLoginSuccess($event)"></app-login>
+
+<!--<as-navbar *ngIf="!login"></as-navbar>-->
+<div>
+  outletText = {{outletText}}
 </div>
-<as-navbar *ngIf="!login"></as-navbar>
 <div class="deal" hidden="{{outletText}}">
   <router-outlet></router-outlet>
 </div>

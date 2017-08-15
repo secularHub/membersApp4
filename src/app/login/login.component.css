@@ -1,10 +1,24 @@
-#lock {
+/*#lock {
   width:40%;
   margin: 1.5em auto 4em auto;
   display:block;
+}*/
+body{color: white;
+  background: #000;}
+form{
+  color: white;
+  background: #000;
 }
-
-#fb {
+div{
+  color: white;
+  background: #000;
+}
+label{color: lightblue}
+textarea{
+  color: white;
+  background: #000;
+}
+/*#fb {
   background:#3B5998 url('assets/images/facebook.svg') no-repeat 14px 6px;
   background-size: 47px;
   color:#fff;
@@ -19,8 +33,8 @@
 #email {
   background: #ECECEC  url('assets/images/email.svg') no-repeat 25px;
   background-size: 25px;
-}
-
+}*/
+/*
 @media (max-width: 600px) {
   #page {
     padding:1em;
@@ -40,4 +54,4 @@
   #email {
     background: #ECECEC;
   }
-}
+}*/

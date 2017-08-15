@@ -17,16 +17,11 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { SignupComponent } from './signup/signup.component';
 import * as firebase from 'firebase/app';
+import {AngularFireDatabase, AngularFireDatabaseModule} from "angularfire2/database";
+import {firebaseConfig} from "./private";
 export { firebase };
 //import {AuthHttp} from "angular2-jwt";
-export const firebaseConfig = {
-  apiKey: "AIzaSyD3UeQygrWX3JWL3o9DWe8c-7r-rF1KD30",
-  authDomain: "memberships-a6f7c.firebaseapp.com",
-  databaseURL: "https://memberships-a6f7c.firebaseio.com",
-  projectId: "memberships-a6f7c",
-  storageBucket: "memberships-a6f7c.appspot.com",
-  messagingSenderId: "554568556346"
-};
+
 
 @NgModule({
   declarations: [
@@ -47,6 +42,8 @@ export const firebaseConfig = {
     BrowserModule,
     FormsModule,
     HttpModule,
+    AngularFireDatabaseModule,
+
     AngularFireAuthModule,
     AngularFireModule.initializeApp(firebaseConfig),
     routing

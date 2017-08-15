@@ -18,7 +18,7 @@ export class AppComponent implements OnInit{
 
   constructor(public router: Router) {
     this.login = true;
-    this.outletText="hidden";
+    this.outletText="";
   }
 
   ngOnInit(){

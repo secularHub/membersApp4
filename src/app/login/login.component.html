@@ -20,22 +20,25 @@
   &lt;!&ndash;<label><input type="checkbox" [(ngModel)]="showCompleted" name="memberCompleted"> show completed</label>&ndash;&gt;
 </div>
 </form>-->
-
+<div>
+  Status:
+<textarea  name="tb" id="tb"> starting: {{status}}</textarea>
+</div>
 <div class="form-container">
-  <img src="assets/images/lock.svg" id="lock">
+  <!--<img src="assets/images/lock.svg" id="lock">-->
 
-  <span class="error" *ngIf="error">{{ error }}</span>
+<!--  <span  *ngIf="error">{{ error }}</span>-->
 
-  <Form ngModel="model" (ngSubmit)="loginEmail()">
-    <label *ngFor="username">user name</label>
-    <input type="text" [(ngMode)]="email" id="username">
-    <label *ngFor="password">password</label>
-    <input type="password" [(ngModel)]="password" id="password">
+  <Form (submit)="loginEmail()">
+    <label for="username">user name</label>
+    <input type="text" [(ngModel)]="email" id="username" name="username">
+    <label for="password">password</label>
+    <input type="password" [(ngModel)]="password" id="password" name="password">
     <button type="submit">Email Login</button>
   </Form>
   <!--<button (click)="loginFb()" id="fb">Login With Facebook</button><br>
   <button (click)="loginGoogle()" id="google">Login With Google</button>-->
 
-
   <a routerLink="/signup" routerLinkActive="active" class="alc">No account? <strong>Create one here</strong></a>
+  <div> Login Status: {{status}}</div>
 </div>

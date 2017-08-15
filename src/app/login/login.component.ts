@@ -1,11 +1,8 @@
 import { Component,EventEmitter, OnInit, AfterViewInit, HostBinding, ViewChildren, Output } from '@angular/core';
 import { Http } from '@angular/http';
-import { AngularFireModule } from 'angularfire2';
 import { Router } from '@angular/router';
-//import { AuthHttp } from 'angular2-jwt';
 import { contentHeaders } from '../common/headers';
 import { confignjs} from '../members/config';
-import { moveIn } from '../router.animations';
 import {AuthService} from "../common/auth.service";
 import { AngularFireAuth } from 'angularfire2/auth';
 
@@ -13,37 +10,42 @@ import { AngularFireAuth } from 'angularfire2/auth';
   selector: 'app-login',
   providers: [AuthService, AngularFireAuth],
   templateUrl: './login.component.html',
-  styleUrls: ['..//members/members.component.css'],
-  animations: [moveIn()],
-  host: {'[@moveIn]': ''}
+  styleUrls: ['./login.component.css']
+
+
 })
 
-export class LoginComponent implements OnInit, AfterViewInit {
+export class LoginComponent implements OnInit {
 
   email:string;
   password: string;
-  @Output() OnLoginSuccess = new EventEmitter<boolean>();
-  @ViewChildren('username') vc;
   someData: string;
   error: any;
+  status: string;
+
+  @Output() OnLoginSuccess = new EventEmitter<boolean>();
+  @ViewChildren('username') vc;
   constructor(public router: Router, public http: Http, private  as: AuthService, private aa: AngularFireAuth) {
     if(this.as.isAuthenticated()){
       this.router.navigateByUrl('/members');
     }
+    this.status="";
   }
 
   ngOnInit() {
+    this.status+="started";
   }
 
-  ngAfterViewInit() {
-    this.vc.first.nativeElement.focus();
-  }
+
   loginEmail(){
-
+    this.status += "loginEmail";
     this.aa.auth.signInWithEmailAndPassword(this.email, this.password)
-      .then(value => {console.log('Nice, it worked');
-      })
-      .catch(er => console.log(er));
+      .then(() =>
+        this.status+="login pass"
+      )
+      .catch(er => {console.log(er);
+        this.status += er;
+      });
   }
  /* loginGoogle() {
     this.af.auth.login({
@@ -69,7 +71,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
         this.error = err;
       })
   }*/
-  login(event, username, password) {
+  /*login(event, username, password) {
     event.preventDefault();
     let h = confignjs.hostlocal;
     this.someData="init:";
@@ -88,5 +90,5 @@ export class LoginComponent implements OnInit, AfterViewInit {
           console.log(error.text());
         }
       );
-  }
+  }*/
 }
