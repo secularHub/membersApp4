@@ -4,7 +4,7 @@
 /dist
 /tmp
 /out-tsc
-/src/app/private
+src/app/private.ts
 # dependencies
 /node_modules
 
